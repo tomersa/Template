@@ -1,10 +1,12 @@
 a: run
 
 build: clean
-	g++ src/main.cpp -o out/main -Wfatal-errors -w
+	g++ -c src/*.cpp -Wfatal-errors -w -g -std=c++11
+	g++ *.o -o out/main && rm *.o
 
 run: build
 	./out/main
 
 clean:
-	rm -rf out/*
+	rm -rf out/
+	mkdir out
