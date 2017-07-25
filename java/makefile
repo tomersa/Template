@@ -1,12 +1,10 @@
 a: run
 
 build: clean
-	javac src/main.java -o out/main
+	javac src/Main.java
 
 run: build
-	pushd .
-	cd out
-	java main; popd
+	java src.Main
 
 clean:
-	rm -rf out/*
+	rm -rf src/*.class
